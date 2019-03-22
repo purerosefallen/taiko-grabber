@@ -95,7 +95,7 @@ request({
 			for (var song of body) { 
 				console.log("Handling song data.", song.id, song.title);
 				if (old_songs.indexOf(song.title) >= 0) { 
-					console.log("The following song is existing, skipped.")
+					console.log("The following song is existing, skipped.", song.id, song.title)
 					continue;
 				}
 				const new_song_id = Math.floor(Math.random() * 1000000);
