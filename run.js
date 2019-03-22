@@ -15,14 +15,18 @@ const categories = {
 
 var sqls = [];
 
+var tasks = 0;
+
 function download_file(uri, dirname, fname) { 
 	if (!fs.existsSync(dirname))
 		fs.mkdirSync(dirname);
 	const filename = dirname + "/" + fname;
 	var stream = fs.createWriteStream(filename);
-	console.log("Downloading file.", uri, filename)
+	tasks++;
+	console.log("Downloading file.", uri, filename, tasks)
 	request(uri).pipe(stream).on('close', () => {
-		console.log("Download complete.", uri, filename)
+		tasks--;
+		console.log("Download complete.", uri, filename, tasks)
 	}); 
 }
 
