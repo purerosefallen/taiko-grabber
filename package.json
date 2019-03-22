@@ -1,0 +1,26 @@
+{
+  "name": "taiko-grabber",
+  "version": "1.0.0",
+  "description": "A script to grab all datas from a website of Taiko Web. ",
+  "main": "run.js",
+  "scripts": {
+    "test": "node run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purerosefallen/taiko-grabber.git"
+  },
+  "keywords": [
+    "taiko",
+    "web"
+  ],
+  "author": "Nanahira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/purerosefallen/taiko-grabber/issues"
+  },
+  "homepage": "https://github.com/purerosefallen/taiko-grabber#readme",
+  "dependencies": {
+    "sqlite3": "^4.0.6"
+  }
+}

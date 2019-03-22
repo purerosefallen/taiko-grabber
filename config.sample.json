@@ -1,0 +1,7 @@
+{
+	"song_api": "https://taiko.bui.pm/api/songs",
+	"song_baseurl": "https://ro.765.cx/songs",
+	"output": "./output",
+	"sql_output": "./output.sql",
+	"old_db": "./taiko.db"
+}
