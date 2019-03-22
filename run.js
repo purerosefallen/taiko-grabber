@@ -62,7 +62,7 @@ function write_db(song, new_song_id) {
 		+ direct_return(1) + ","
 		+ direct_return(categories[song.category]) + ","
 		+ look(song, "type") + ","
-		+ look(song, "offset") + ","
+		+ direct_return(song.offset || 0) + ","
 		+ direct_return(null)
 		+ ");";
 	sqls.push(data);
