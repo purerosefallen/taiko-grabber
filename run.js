@@ -30,8 +30,7 @@ function download_file(uri, dirname, fname) {
 	}); 
 }
 
-function look(song, key) {
-	const data = song[key];
+function direct_return(data) {
 	if (data) {
 		if (typeof (data) == "string")
 			return "'" + data.replace("'","''") + "'";
@@ -41,14 +40,9 @@ function look(song, key) {
 		return "NULL";
 }
 
-function direct_return(data) {
-	if (data) {
-		if (typeof (data) == "string")
-			return "'" + data.replace("'","''") + "'";
-		else
-			return data;
-	} else
-		return "NULL";
+function look(song, key) {
+	const data = song[key];
+	return direct_return(data);
 }
 
 function write_db(song, new_song_id) { 
