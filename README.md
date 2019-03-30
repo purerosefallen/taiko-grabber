@@ -1,5 +1,5 @@
 # Taiko Web chart grabber
-A script to grab all datas from another website of Taiko Web, and use them with your own Taiko Web. But you had better ask the website owner before running this script.
+A script to grab all datas from another website of Taiko Web for your own Taiko Web. But you had better ask the website owner before running this script.
 
 ## How to use
 
