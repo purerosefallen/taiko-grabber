@@ -3,5 +3,6 @@
 	"song_baseurl": "https://ro.765.cx/songs",
 	"output": "./output",
 	"sql_output": "./output.sql",
-	"old_db": "./taiko.db"
+	"old_db": "./taiko.db",
+	"random_song_id": true
 }

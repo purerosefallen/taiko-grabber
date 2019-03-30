@@ -104,7 +104,7 @@ request({
 					console.log("The following song is existing, skipped.", song.id, song.title)
 					continue;
 				}
-				const new_song_id = Math.floor(Math.random() * 1000000);
+				const new_song_id = config.random_song_id ? Math.floor(Math.random() * 1000000) : song.id;
 				download_file(config.song_baseurl + "/" + song.id + "/main.mp3", config.output + "/" + new_song_id, "main.mp3");
 				if (song.type === "tja") {
 					download_file(config.song_baseurl + "/" + song.id + "/main.tja", config.output + "/" + new_song_id, "main.tja");
