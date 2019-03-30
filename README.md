@@ -9,4 +9,6 @@ A script to grab all datas from another website of Taiko Web, and use them with 
 
 3. Copy out the songs in `output` folder, or the output folder of your choice.
 
-4. Run all the SQL commands with your `taiko.db` from `output.sql`, to generate the database. Then, upload all the chart files, and enjoy!
+4. Run all the SQL commands with your `taiko.db` from `output.sql` to generate the database. Then, upload all the chart files from output folder.
+
+5. Enjoy!
