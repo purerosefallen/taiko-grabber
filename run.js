@@ -30,19 +30,21 @@ function download_file(uri, dirname, fname) {
 	}); 
 }
 
-function direct_return(data) {
-	if (data) {
+function direct_return(data, fallback) {
+	if (data != null) {
 		if (typeof (data) == "string")
-			return "'" + data.replace("'","''") + "'";
+			return "'" + data.replace("'", "''") + "'";
 		else
 			return data;
-	} else
+	} else if (fallback != null) { 
+		return direct_return(fallback);
+	}
 		return "NULL";
 }
 
-function look(song, key) {
+function look(song, key, fallback) {
 	const data = song[key];
-	return direct_return(data);
+	return direct_return(data, fallback);
 }
 
 function write_db(song, new_song_id) { 
@@ -60,9 +62,9 @@ function write_db(song, new_song_id) {
 		+ direct_return(1) + ","
 		+ direct_return(categories[song.category]) + ","
 		+ look(song, "type") + ","
-		+ direct_return(song.offset || 0) + ","
+		+ look(song, "offset", 0) + ","
 		+ direct_return(null) + ","
-		+ look(song, "preview") + ","
+		+ look(song, "preview", 0) + ","
 		+ look(song, "volume")
 		+ ");";
 	sqls.push(data);
