@@ -67,7 +67,9 @@ function write_db(song, new_song_id) {
 		+ direct_return(categories[song.category]) + ","
 		+ look(song, "type") + ","
 		+ direct_return(song.offset || 0) + ","
-		+ direct_return(null)
+		+ direct_return(null) + ","
+		+ look(song, "preview") + ","
+		+ look(song, "volume")
 		+ ");";
 	sqls.push(data);
 	console.log("Song DB written.", song.title)

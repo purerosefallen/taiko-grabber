@@ -1,2 +1,2 @@
 #!/bin/bash
-ls | xargs -P $(grep -c processor /proc/cpuinfo) -I {} bash -c 'cd {} && mpg321 main.mp3 -w raw && oggenc raw -o main.ogg && rm -rf raw main.mp3'
+ls | xargs  -I {} bash -c 'cd {} && mpg321 main.mp3 -w main.wav && oggenc main.wav -o main.ogg && rm -rf main.wav main.mp3'
