@@ -173,7 +173,7 @@ function handleMaker(maker: Maker): number {
 }
 
 async function handleSongData(data: SongAPIData): Promise<SongDBData> {
-	if (_.any(existingSongs, oldData => data.title === oldData)) {
+	if (_.any(existingSongs, oldData => data.title === oldData.title)) {
 		console.log(`Song ${data.title} exists. Skipping.`);
 		return null;
 	}
