@@ -2,6 +2,7 @@ import fs, { ReadStream } from "fs";
 import loadJSON from "load-json-file";
 import {ProxyFetcher, ProxyConfig} from "./proxy";
 import _ from "underscore";
+import { AxiosRequestConfig } from "axios";
 
 interface Config {
 	"song_api": string,
@@ -10,6 +11,7 @@ interface Config {
 	"output": string,
 	"old_db_file": string,
 	"proxy": ProxyConfig,
+	"customFetchOptions": AxiosRequestConfig,
 	"random_song_id": boolean
 }
 
@@ -98,7 +100,8 @@ async function downloadFile(url: string, dirname: string, filename: string) {
 	while (true) {
 		try {
 			const stream: ReadStream = (await fetcher.getWithProxy(url, {
-				responseType: "stream"
+				responseType: "stream",
+				...config.customFetchOptions
 			})).data;
 			await new Promise(async (resolve, reject) => {
 				stream.pipe(fs.createWriteStream(path));
@@ -228,7 +231,8 @@ async function main() {
 	}
 	console.log(`Fetching song list from ${config.song_api}.`);
 	const originalSongs: SongAPIData[] = (await fetcher.getWithProxy(config.song_api, {
-		responseType: "json"
+		responseType: "json",
+		...config.customFetchOptions
 	})).data;
 	console.log(`${originalSongs.length} songs fetched.`);
 	const handledSongs = (await Promise.all(originalSongs.map(handleSongData))).filter(m => m != null);

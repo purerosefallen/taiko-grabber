@@ -12,5 +12,6 @@
 			"http://www.66ip.cn/mo.php?tqsl=9999"
 		]
 	},
+	"customFetchOptions": {},
 	"random_song_id": true
 }
