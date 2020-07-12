@@ -198,7 +198,7 @@ async function handleSongData(data: SongAPIData): Promise<SongDBData> {
 		"subtitle_lang": data.subtitle_lang,
 		"lyrics": false
 	}
-	//await downloadRelatedFiles(data, ret);
+	await downloadRelatedFiles(data, ret);
 	return ret;
 }
 

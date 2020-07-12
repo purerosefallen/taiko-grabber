@@ -1,6 +1,6 @@
 {
   "name": "taiko-grabber",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A script to grab all datas from a website of Taiko Web. ",
   "main": "run.js",
   "scripts": {
