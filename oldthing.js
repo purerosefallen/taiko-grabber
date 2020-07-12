@@ -87,8 +87,8 @@ request({
 			return;
 		}
 		var old_songs = [];
-		console.log("Reading existing database.", config.old_db);
-		var db = new sqlite3.Database(config.old_db);
+		console.log("Reading existing database.", config.old_db_file);
+		var db = new sqlite3.Database(config.old_db_file);
 		db.each("select * from songs", (err, result) => { 
 			if (err) {
 				console.log("Errored reading existing database.", err);

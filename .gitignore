@@ -64,3 +64,5 @@ config.json
 *.db
 *.sql
 /output
+/songs.json
+/build

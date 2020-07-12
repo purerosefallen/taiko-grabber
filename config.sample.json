@@ -1,8 +1,16 @@
 {
 	"song_api": "https://taiko.bui.pm/api/songs",
-	"song_baseurl": "https://ro.765.cx/songs",
+	"song_baseurl": "https://ks1.kiremani.net/taiko/songs",
+	"song_type": "mp3",
 	"output": "./output",
-	"sql_output": "./output.sql",
-	"old_db": "./taiko.db",
+	"old_db_file": "./songs.json",
+	"proxy": {
+		"useProxy": false,
+		"timeout": 10000,
+		"proxySource": [
+			"http://www.89ip.cn/tqdl.html?api=1&num=9999",
+			"http://www.66ip.cn/mo.php?tqsl=9999"
+		]
+	},
 	"random_song_id": true
 }
